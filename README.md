@@ -1,117 +1,62 @@
-# Hugo ʕ•ᴥ•ʔ Bear Blog [![CI](https://github.com/janraasch/hugo-bearblog/actions/workflows/ci.yml/badge.svg)](https://github.com/janraasch/hugo-bearblog/actions/workflows/ci.yml)
+# Jonathan Zhu's Portfolio
 
-🧸 A [Hugo](https://gohugo.io/)-theme based on [Bear Blog](https://bearblog.dev).
+This is Jonathan Zhu's portfolio and personal site, built with [Hugo](https://gohugo.io/) and the [Hugo Bear Blog theme](https://github.com/janraasch/hugo-bearblog).
 
-> Free, no-nonsense, super-fast blogging.
+## Project structure
 
-## Demo
-
-For a current & working demo of this theme, please check out https://janraasch.github.io/hugo-bearblog/ 🎯.
-
-## Screenshots
-
-⬜️ [Light][light-screenshot]
-
-⬛️ [Dark][dark-screenshot]
-
-When the user's browser is running »dark mode«, the dark color scheme will be used automatically. The default is the light/white color scheme. Check out the [`style.html`](https://github.com/janraasch/hugo-bearblog/blob/master/layouts/partials/style.html)-file for the implementation.
-
-## Installation
-
-If you already have a Hugo site on your machine, you can simply add this theme via
-
-```bash
-git submodule add https://github.com/janraasch/hugo-bearblog.git themes/hugo-bearblog
+```text
+.
+├── site/
+│   ├── hugo.toml                 # Hugo site configuration
+│   ├── content/                  # Pages and posts
+│   ├── layouts/                  # Site-specific template overrides
+│   ├── static/                   # Files copied directly to the site
+│   └── themes/hugo-bearblog/     # Bear Blog Git submodule
+├── Justfile                      # Development commands
+└── .github/workflows/ci.yml      # GitHub Pages deployment
 ```
 
-Then, adjust the `hugo.toml` as detailed below.
+## Requirements
 
-For more information, read the official [setup guide][hugo-setup-guide] of Hugo.
+- [Hugo Extended](https://gohugo.io/installation/)
+- [just](https://github.com/casey/just)
+- Git, including submodule support
 
-## Adjust configuration / hugo.toml
-
-Please check out the [hugo.toml](https://github.com/janraasch/hugo-bearblog/blob/master/exampleSite/hugo.toml) included in the [exampleSite](https://github.com/janraasch/hugo-bearblog/tree/master/exampleSite) of this theme.
-
-## Content & structure
-
-### Starting fresh
-
-If you are starting fresh, simply copy over the contents of the `exampleSite`-directory included in this theme to your source directory. That should give you a good idea about how things work, and then you can go on from there to make the site your own.
-
-### Adding / editing content
-
-#### Index-Page
-
-The contents of the `index`-page may be changed by editing your `content/_index.md`-file.
-
-#### Page
-
-You can add **a new page** via running
+After cloning, initialize the theme with:
 
 ```bash
-hugo new my-new-page.md
+git submodule update --init --recursive
 ```
-
-#### Blog-Post
-
-You can add **a new blog-post** via running
-
-```bash
-hugo new blog/my-new-post.md
-```
-
-### Adding your branding / colors / css
-
-Add a `custom_head.html`-file to your `layouts/partials`-directory. In there you may add a `<style>`-tag, *or* you may add a `<link>`-tag referencing your own `custom.css` (in case you prefer to have a separate `.css`-file). Check out the [`style.html`](https://github.com/janraasch/hugo-bearblog/blob/master/layouts/partials/style.html)-file to find out which CSS-styles are applied by default.
-
-## Remixes 🎭
-
-The community has created some interesting variations of Hugo ʕ•ᴥ•ʔ Bear Blog. While the main theme stays true to the minimal Bear Blog philosophy, these remixes experiment with additional features:
-
-* [Hugo ʕ•ᴥ•ʔ Bear Blog ✨ Neo](https://github.com/rokcso/hugo-bearblog-neo/) - Features Chinese documentation and an innovative "Toast" upvote system.
-
-* [ᕦʕ •ᴥ•ʔᕤ Bear Cub](https://github.com/clente/hugo-bearcub) - A multilingual variant with experimental features like automatic social card generation.
-
-_Note: These are independent forks maintained by their respective creators._
-
-## Contributing & Community 🤝
-
-Interested in contributing to Hugo ʕ•ᴥ•ʔ Bear Blog? Thanks for your interest!
-
-- Check out our [Contributing Guidelines](CONTRIBUTING.md) for code contributions and bug reports
-- [Share your story](https://github.com/janraasch/hugo-bearblog/issues/new/choose) if you're using the theme - we'd love to see what you've built!
-- Have questions? You can find help in our [GitHub issues](https://github.com/janraasch/hugo-bearblog/issues) or the [Hugo Discourse](https://discourse.gohugo.io/)
-
-We aim to keep this theme as simple and fast as the original [Bear Blog](https://bearblog.dev), while making it a friendly space for everyone to contribute and share their experiences.
 
 ## Development
-Run the `exampleSite` locally via
 
 ```bash
-hugo server --source ./exampleSite --themesDir ../..
+just preview  # Start the local server
+just build    # Build the production site
+just new name # Create a blog post
+just clean    # Remove generated output
 ```
 
-In case you want to test functionalities and use hugo commands, in the root directory, you'll have to append `--source ./exampleSite --themesDir ../..` to them.
+The local site is available at `http://localhost:1313/`.
 
-For example:
+## Editing the site
+
+The homepage is at `site/content/_index.md`. The Projects page is at `site/content/projects.md`.
+
+Add images, PDFs, or other public files under `site/static/`. The resume is available at `site/static/resume.pdf`.
+
+Site-specific styles are in `site/static/css/custom.css`. Bear Blog templates can be overridden by creating a file with the same path under `site/layouts/`. Avoid editing files directly inside `site/themes/hugo-bearblog/`, since it is a Git submodule.
+
+## Deployment
+
+Pushes to the `master` branch trigger `.github/workflows/ci.yml`. The workflow builds `site/` and deploys the generated output to GitHub Pages at:
+
+<https://jiasunzhu613.github.io/porterfolio/>
+
+## Updating the theme
 
 ```bash
-hugo new blog/post.md --source ./exampleSite --themesDir ../..
+git submodule update --remote site/themes/hugo-bearblog
+git add site/themes/hugo-bearblog
+git commit -m "Update Bear Blog theme"
 ```
-
-Same thing for pages:
-
-```bash
-hugo new page.md  --source ./exampleSite --themesDir ../..
-```
-
-## Special Thanks 🎁
-
-A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/).
-
-## License
-[MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Jan Raasch](https://www.janraasch.com)
-
-[hugo-setup-guide]: https://gohugo.io/getting-started/installing
-[light-screenshot]: https://raw.githubusercontent.com/janraasch/hugo-bearblog/master/images/screenshot.png
-[dark-screenshot]: https://raw.githubusercontent.com/janraasch/hugo-bearblog/master/images/screenshot-dark.png
