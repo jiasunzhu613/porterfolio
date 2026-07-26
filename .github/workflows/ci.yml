@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v7
       with:
         name: build
-        path: ./public
+        path: ./site/public
 
   deploy:
     needs: build
@@ -41,8 +41,8 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           name: build
-          path: ./public
+          path: ./site/public
       - uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./site/public
