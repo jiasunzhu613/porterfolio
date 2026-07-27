@@ -13,6 +13,6 @@ A place for me to write whatever is on my mind, about tech, life, and whatever i
 See what I'm up to:
 - <a href="https://github.com/jiasunzhu613" target="_blank" rel="noopener noreferrer">GitHub</a>
 - <a href="https://www.linkedin.com/in/zhu-jonathan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- <a href="/porterfolio/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+- <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 
 ---
