@@ -6,6 +6,7 @@ This is Jonathan Zhu's portfolio and personal site, built with [Hugo](https://go
 
 ```text
 .
+├── .github/workflows/ci.yml      # GitHub Pages deployment
 ├── site/
 │   ├── hugo.toml                 # Hugo site configuration
 │   ├── content/                  # Pages and posts
@@ -13,7 +14,6 @@ This is Jonathan Zhu's portfolio and personal site, built with [Hugo](https://go
 │   ├── static/                   # Files copied directly to the site
 │   └── themes/hugo-bearblog/     # Bear Blog Git submodule
 ├── Justfile                      # Development commands
-└── .github/workflows/ci.yml      # GitHub Pages deployment
 ```
 
 ## Requirements
