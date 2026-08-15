@@ -1,11 +1,10 @@
-+++
-title = "Hello World!"
-date = "2026-06-26"
-description = "My first blog!"
-tags = [
-    "Misc"
-]
-+++
+---
+title: Hello World!
+date: 2026-06-26
+description: My first blog!
+tags:
+  - Misc
+---
 
 This is the beginning... ~~hopefully...~~ Edit: nah screw that we'll make it work
 
