@@ -39,6 +39,17 @@ just clean    # Remove generated output
 
 The local site is available at `http://localhost:1313/`.
 
+The GitHub activity calendar is refreshed during CI builds. Local builds use the
+checked-in placeholder data in `site/data/github.json`. To refresh it locally, run:
+
+```bash
+GITHUB_ACTIVITY_TOKEN=your_token node scripts/fetch-github-contributions.mjs
+```
+
+The built-in Actions token includes public contribution activity. To include
+private contribution counts, add a repository secret named `GH_ACTIVITY_TOKEN`
+using a GitHub token with `read:user` access.
+
 ## Editing the site
 
 The homepage is at `site/content/_index.md`. The Projects page is at `site/content/projects.md`.
@@ -52,6 +63,9 @@ Site-specific styles are in `site/static/css/custom.css`. Bear Blog templates ca
 Pushes to the `master` branch trigger `.github/workflows/ci.yml`. The workflow builds `site/` and deploys the generated output to GitHub Pages at:
 
 <https://jiasunzhu613.github.io/porterfolio/>
+
+The same workflow also refreshes and deploys the site nightly at 4:17 AM in the
+`America/Toronto` time zone.
 
 ## Updating the theme
 

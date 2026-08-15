@@ -1,0 +1,34 @@
+{{- $activity := hugo.Data.github -}}
+<section class="github-activity" aria-labelledby="github-activity-title">
+  <p id="github-activity-title">GitHub activity</p>
+  <div class="github-activity-scroll" tabindex="0">
+    <div
+      class="github-contribution-grid"
+      role="img"
+      aria-label="{{ if $activity.weeks }}{{ $activity.totalContributions }} GitHub contributions from {{ $activity.from }} through {{ $activity.to }}{{ else }}GitHub contribution activity loads when the site is deployed{{ end }}"
+    >
+      {{- if $activity.weeks -}}
+        {{- range $activity.weeks -}}
+          {{- range .contributionDays -}}
+            <span
+              class="github-contribution-day level-{{ .contributionLevel | lower }}"
+              style="grid-row: {{ add .weekday 1 }}"
+              title="{{ .date }}: {{ .contributionCount }} contribution{{ if ne (int .contributionCount) 1 }}s{{ end }}"
+            ></span>
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{- range seq 53 -}}
+          {{- range seq 7 -}}
+            <span class="github-contribution-day level-none"></span>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+  {{- if $activity.weeks }}
+  <p class="github-activity-summary">
+    {{ $activity.totalContributions }} contributions in the last year
+  </p>
+  {{- end }}
+</section>

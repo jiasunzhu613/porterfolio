@@ -1,0 +1,19 @@
+{{- $posts := where .Site.RegularPages "Section" "blog" -}}
+<section class="recent-posts" aria-labelledby="recent-posts-title">
+  <p id="recent-posts-title">Recent blog posts</p>
+  {{- if $posts }}
+  <ul>
+    {{- range first 3 $posts.ByDate.Reverse }}
+    <li>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format "Jan 2, 2006" }}
+      </time>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{- end }}
+  </ul>
+  <a class="all-posts-link" href="{{ "blog/" | relURL }}">See all blog posts</a>
+  {{- else }}
+  <p>No posts yet.</p>
+  {{- end }}
+</section>

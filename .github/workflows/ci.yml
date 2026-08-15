@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
     - master
+  schedule:
+    - cron: '17 4 * * *'
+      timezone: America/Toronto
   workflow_dispatch:
 
 permissions:
@@ -28,6 +31,12 @@ jobs:
       with:
         hugo-version: latest
 
+    - name: Fetch GitHub contribution activity
+      run: node scripts/fetch-github-contributions.mjs
+      env:
+        GITHUB_ACTIVITY_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN || secrets.GITHUB_TOKEN }}
+        GITHUB_ACTIVITY_USERNAME: jiasunzhu613
+
     - name: Build site
       run: |
         hugo --minify --gc --cleanDestinationDir --destination ./public --source ./site --themesDir themes --baseURL "https://jonathanzhu.com/"
@@ -43,7 +52,7 @@ jobs:
     needs: build
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v6
       - uses: actions/download-artifact@v8
