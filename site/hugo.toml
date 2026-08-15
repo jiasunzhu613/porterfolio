@@ -6,7 +6,7 @@ baseURL = "https://jonathanzhu.com/"
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
-title = "Jonathan Zhu's Website"
+title = "Jonathan Zhu"
 author = "Jonathan Zhu"
 copyright = "Copyright © 2026, Jonathan Zhu."
 languageCode = "en-US"
@@ -43,6 +43,12 @@ ignoreFiles = [
   # opengraph structured data template.
   # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
   title = "Jonathan Zhu's Portfolio"
+
+  [params.social]
+    github = "https://github.com/jiasunzhu613"
+    linkedin = "https://www.linkedin.com/in/zhu-jonathan/"
+    resume = "/resume.pdf"
+    rss = "/blog/index.xml"
 
   # This theme will, by default, inject a made-with-line at the bottom of the page.
   # You can turn it off, but we would really appreciate if you don’t :-).
