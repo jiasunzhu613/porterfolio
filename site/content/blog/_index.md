@@ -1,5 +1,5 @@
 ---
 title: Blog
 menu: main
-wieght: 100
+weight: 100
 ---
