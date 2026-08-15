@@ -7,6 +7,7 @@
       {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
     </time>
   </i>
+  <small>&middot; {{ .ReadingTime }} min read</small>
 </p>
 {{ end }}{{ end }}
 <content>
