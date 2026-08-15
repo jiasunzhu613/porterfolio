@@ -35,10 +35,6 @@
     --link-color: #a45132;
     --visited-color: #a45132;
   }
-
-  .header-links a {
-    color: var(--link-color);
-  }
 }
 
 .recent-posts,
