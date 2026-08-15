@@ -30,6 +30,17 @@
   height: 1.35rem;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --link-color: #a45132;
+    --visited-color: #a45132;
+  }
+
+  .header-links a {
+    color: var(--link-color);
+  }
+}
+
 .recent-posts,
 .github-activity {
   margin-top: 2.5rem;
