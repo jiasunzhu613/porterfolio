@@ -1,6 +1,6 @@
 {{- $posts := where .Site.RegularPages "Section" "blog" -}}
 <section class="recent-posts" aria-labelledby="recent-posts-title">
-  <p id="recent-posts-title">Recent blog posts</p>
+  <p id="recent-posts-title">Latest blog posts</p>
   {{- if $posts }}
   <ul>
     {{- range first 3 $posts.ByDate.Reverse }}
