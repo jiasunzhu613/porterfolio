@@ -1,11 +1,14 @@
 {{- $activity := hugo.Data.github -}}
+{{- $githubURL := .Site.Params.social.github -}}
 <section class="github-activity" aria-labelledby="github-activity-title">
   <p id="github-activity-title">GitHub activity</p>
   <div class="github-activity-scroll" tabindex="0">
-    <div
+    <a
       class="github-contribution-grid"
-      role="img"
-      aria-label="{{ if $activity.weeks }}{{ $activity.totalContributions }} GitHub contributions from {{ $activity.from }} through {{ $activity.to }}{{ else }}GitHub contribution activity loads when the site is deployed{{ end }}"
+      href="{{ $githubURL }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ if $activity.weeks }}View {{ $activity.totalContributions }} GitHub contributions from {{ $activity.from }} through {{ $activity.to }} on GitHub{{ else }}View GitHub activity on GitHub{{ end }}"
     >
       {{- if $activity.weeks -}}
         {{- range $activity.weeks -}}
@@ -24,7 +27,7 @@
           {{- end -}}
         {{- end -}}
       {{- end -}}
-    </div>
+    </a>
   </div>
   {{- if $activity.weeks }}
   <p class="github-activity-summary">
