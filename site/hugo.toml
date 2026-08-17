@@ -74,6 +74,7 @@ ignoreFiles = [
       unsafe = true
   [markup.highlight]
     style = 'friendly'
+    noClasses = false
     lineNos = true
     lineNumbersInTable = false
     codeFences = true
