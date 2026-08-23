@@ -1,3 +1,16 @@
 <link rel="stylesheet" href="{{ "css/syntax-light.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+<style>
+  ::selection {
+    color: #fff;
+    background-color: #a45132;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      color: #01242e;
+      background-color: #9bc2ad;
+    }
+  }
+</style>

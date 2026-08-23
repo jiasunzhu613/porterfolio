@@ -3,3 +3,4 @@ public/
 .hugo_build.lock
 .obsidian
 .DS_Store
+*work-in-progress/

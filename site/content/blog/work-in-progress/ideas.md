@@ -1,1 +1,0 @@
-- being in the right place at the right time is not enough, you need to be prepared for it!
