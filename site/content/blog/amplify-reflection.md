@@ -35,7 +35,7 @@ I have probably interacted with more people this summer than I have throughout t
 
 However, more than just the technical accomplishments and the soft skills that were gained, all friendships and connections I made throughout Amplify is what truly made it special. I am so grateful to meet so many incredible people that I probably would have never crossed paths with before. This summer has undoubtedly been the best 4 months I have spent in recent history and I owe that to all the people that I have met, talked to and learned from. 
 
-There are so many people I could write on this list that it couldn't possibly fit in one reasonably sized list. 
+There are so many people I could write about that it couldn't possibly fit in one reasonably sized list. 
 
 If you are on this list and reading right now, thank you! Likewise, if you are not on this list and I have talked to you this summer, just know that my summer would've been very different without you in it!
 
