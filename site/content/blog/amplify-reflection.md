@@ -41,7 +41,7 @@ If you are on this list and reading right now, thank you! Likewise, if you are n
 
 - **Gabriel**: showed me what a truly great communicator looks like (also bro is so cracked at mario kart)
 - **Ivan, Marin**: planned such incredible events!!
-- **Helen**: taught me what active listening should look like
+- **Helen**: showed me what active listening should look like
 - **John**: the most intentional, metacognizant man I know, also encouraged me to start blogging
 - **Meet**: daily walk back home + showed me that you can have fun while working hard
 - **Ansh**: carried me on his back all summer, literally
