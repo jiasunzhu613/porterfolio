@@ -122,6 +122,75 @@
   font-size: 0.8rem;
 }
 
+.project {
+  padding: 1.35rem 0;
+}
+
+.project:first-of-type {
+  padding-top: 0.5rem;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.project-heading {
+  display: grid;
+  grid-template-columns: max-content minmax(0, max-content);
+  align-items: baseline;
+  justify-content: start;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-description > :first-child,
+.project-technologies {
+  margin-top: 0;
+}
+
+.project-description > :last-child,
+.project-technologies {
+  margin-bottom: 0;
+}
+
+.project-technologies {
+  /* color: color-mix(in srgb, var(--text-color) 75%, transparent);
+  font-family: monospace; */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.project-technologies-label {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .project {
+    padding: 1rem 0;
+  }
+
+  .project-heading {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-technologies {
+    margin-top: 0.1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .project-technologies-label {
+    display: inline;
+    color: var(--heading-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .github-contribution-day {
     background: #173b43;
