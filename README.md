@@ -54,6 +54,15 @@ using a GitHub token with `read:user` access.
 
 The homepage is at `site/content/_index.md`. The Projects page is at `site/content/projects.md`.
 
+Project entries accept separate optional `github` and `project` URLs. Each URL is
+shown as its corresponding icon beside the project title:
+
+```go-html-template
+{{</* project title="Example" github="https://github.com/example/repo" project="https://example.com" technologies="Go" */>}}
+Project description.
+{{</* /project */>}}
+```
+
 Add images, PDFs, or other public files under `site/static/`. The resume is available at `site/static/resume.pdf`.
 
 Site-specific styles are in `site/static/css/custom.css`. Bear Blog templates can be overridden by creating a file with the same path under `site/layouts/`. Avoid editing files directly inside `site/themes/hugo-bearblog/`, since it is a Git submodule.
