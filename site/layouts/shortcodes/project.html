@@ -1,0 +1,13 @@
+<article class="project">
+  <div class="project-heading">
+    <h3 class="project-title">
+      <a href="{{ .Get "href" }}" target="_blank" rel="noopener noreferrer">
+        {{ .Get "title" }}
+      </a>
+    </h3>
+    <p class="project-technologies">{{ .Get "technologies" }}</p>
+  </div>
+  <div class="project-description">
+    {{ .Inner | markdownify }}
+  </div>
+</article>
