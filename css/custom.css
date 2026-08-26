@@ -135,6 +135,27 @@
   font-size: 1.15rem;
 }
 
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.project-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--heading-color);
+}
+
+.project-link:hover {
+  color: var(--link-color);
+}
+
+.project-link svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
 .project-heading {
   display: grid;
   grid-template-columns: max-content minmax(0, max-content);
